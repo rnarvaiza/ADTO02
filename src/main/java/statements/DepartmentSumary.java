@@ -1,10 +1,17 @@
 package statements;
 
+/**
+ * @author Rafa Narvaiza
+ * AD TO 02
+ *
+ *DepartmentSummary is designed for calling an prepared statement which returns all the departments which its ammount of employees
+ * and the total expenses of each department.
+ */
+
 import constants.ConstantsDB;
 import constants.Statements;
 import dbConnector.DBConnect;
 import model.*;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;

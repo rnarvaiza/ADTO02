@@ -1,10 +1,16 @@
 package statements;
 
+/**
+ * @author Rafa Narvaiza
+ * AD TO 02
+ *
+ * EmployeesAndDepartments is designed to send a prepared statement with the department ID and show the department name
+ * and all the info about its employees.
+ */
 import constants.ConstantsDB;
 import constants.Statements;
 import dbConnector.DBConnect;
 import model.Closer;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

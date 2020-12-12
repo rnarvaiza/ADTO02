@@ -1,9 +1,16 @@
 package statements;
 
+/**
+ * @author Rafa Narvaiza
+ * AD TO 02
+ *
+ * CalledProcedure is designed for call a procedure with two input parameters and one output parameter.
+ *
+ */
+
 import constants.ConstantsDB;
 import constants.Statements;
 import dbConnector.DBConnect;
-
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.SQLException;

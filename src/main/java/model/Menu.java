@@ -1,49 +1,19 @@
 package model;
 
+/**
+ * @author Rafa Narvaiza
+ * AD TO 02
+ *
+ * Menu class display throw shell a command menu to manage all the clases.
+ * We tried to manage all the exceptions on the inputs, gramatically and coherently.
+ */
 import statements.*;
-
 import java.sql.SQLException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
     public static void showMenu() throws SQLException {
-
-        //InnerJoin.psij();
-/*        long sal_min = 20000;
-        long sal_max = 30000;
-
-        try {
-            ParameterFunction.setSalario_maximo(sal_max);
-            ParameterFunction.setSalario_minimo(sal_min);
-            ParameterFunction.rangoSalario();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }*/
-
-/*
-        try{
-            CalledProcedure.setComision_minimo(15);
-            CalledProcedure.setComision_maximo(30);
-            CalledProcedure.rangoComision();
-
-        } catch (SQLException e){
-            System.out.println(e.getMessage());
-        }
-*/
-
-
-        //  EmployeesAndDepartments.employees();
-
-/*        UpdateSalaryOnDepartment.setDEPARTAMENTO("MARKETING");
-
-        UpdateSalaryOnDepartment.showSalaryOnEveryWorkerOfDepartment();
-        UpdateSalaryOnDepartment.setId_departamento(1);
-        UpdateSalaryOnDepartment.setPorcentaje_incremento(0.5);
-        UpdateSalaryOnDepartment.manageUpdate();
-        UpdateSalaryOnDepartment.showSalaryOnEveryWorkerOfDepartment();*/
-
-
 
         Scanner scanner = new Scanner(System.in);
         Scanner scannerForDouble = new Scanner(System.in);
@@ -74,6 +44,7 @@ public class Menu {
                         break;
                     case 2:
                         try{
+                            //Avoid to type on sal_max the lower one of the gap.
                             while(sal_max<sal_min){
                                 System.out.println("Introduzca el salario mínimo por favor:");
                                 sal_min=scannerForLong.nextLong();
@@ -98,6 +69,7 @@ public class Menu {
                         break;
                     case 3:
                         try{
+                            //Avoid to type on the lower side of the gap the max value.
                             while(com_max<=com_min){
                                 System.out.println("Introduzca la comisión mínima por favor:");
                                 com_min=scannerForLong.nextLong();

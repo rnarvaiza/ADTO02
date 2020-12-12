@@ -1,9 +1,12 @@
 
-import statements.*;
+/**
+ * @author Rafa Narvaiza
+ * AD TO 02
+ *
+ * Main class which call Menu class in order to manage menu all the methods in the menu.
+ */
 
 import java.sql.SQLException;
-import java.util.InputMismatchException;
-import java.util.Scanner;
 import model.*;
 
 public class Main {

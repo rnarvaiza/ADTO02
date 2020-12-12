@@ -1,8 +1,16 @@
 package statements;
+
+/**
+ * @author Rafa Narvaiza
+ * AD TO 02
+ *
+ * ParameterFunction prepares a statement to call a stored function on mysql server.
+ * We will give through parameters the gap salary and we will be returned the amount of
+ * employees between this gap.
+ */
 import constants.*;
 import dbConnector.DBConnect;
 import model.Closer;
-
 import java.sql.*;
 
 public class ParameterFunction {

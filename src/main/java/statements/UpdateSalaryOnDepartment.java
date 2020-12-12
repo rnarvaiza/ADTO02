@@ -1,10 +1,17 @@
 package statements;
 
+/**
+ * @author Rafa Narvaiza
+ * AD TO 02
+ *
+ * UpdateSalaryOnDepartment is designed to send a prepared UPDATE statement to the server.
+ * We parametricize the increase and show the collection of employees before the raise
+ * and after it.
+ */
 import constants.ConstantsDB;
 import constants.Statements;
 import dbConnector.DBConnect;
 import model.Closer;
-
 import java.sql.*;
 
 import static constants.Statements.UPDATE_SALARY_FROM_DEPARTMENT;

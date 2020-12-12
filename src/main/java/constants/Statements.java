@@ -1,6 +1,11 @@
 package constants;
 
-import statements.ParameterFunction;
+/**
+ * @author Rafa Narvaiza
+ * AD TO 02
+ *
+ * Statements save all the statements as a constant string to avoid modification by others.
+ */
 
 public class Statements {
 

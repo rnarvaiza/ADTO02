@@ -1,7 +1,13 @@
 package dbConnector;
 
-import constants.ConstantsDB;
+/**
+ * @author Rafa Narvaiza
+ * AD TO 02
+ *
+ * DBConnector defines the JDBC driver conection.
+ */
 
+import constants.ConstantsDB;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

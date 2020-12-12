@@ -1,3 +1,10 @@
+/**
+ * @author Rafa Narvaiza
+ * AD TO 02
+ *
+ * ConstantsDB save user, password, driver name and url to achieve connection to my mysql server.
+ */
+
 package constants;
 
 public class ConstantsDB {

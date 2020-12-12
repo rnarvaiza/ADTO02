@@ -1,5 +1,10 @@
 package model;
 
+/**
+ * @author Rafa Narvaiza
+ * AD TO 02
+ * This constructor is designed to close Statement and ResultSet constructors.
+ */
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;

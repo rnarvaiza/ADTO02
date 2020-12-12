@@ -1,4 +1,4 @@
-package db;
+package dbConnector;
 
 import constants.ConstantsDB;
 

@@ -9,7 +9,7 @@ package statements;
  */
 
 import constants.*;
-import db.*;
+import dbConnector.*;
 import java.sql.*;
 
 public class InnerJoin {
@@ -36,6 +36,7 @@ public class InnerJoin {
 
                 while (rs.next()) {
                     System.out.println(
+                            rs.getString("ID") + "\t\t"+
                             rs.getString("NOMBRE") + "\t\t"+
                             rs.getString("APELLIDOS") + "\t\t"+
                             rs.getString("OFICIO") + "\t\t"+

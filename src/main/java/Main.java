@@ -31,7 +31,13 @@ public class Main {
         }
 */
 
-        Scanner scanner = new Scanner(System.in);
+        InnerJoin.psij();
+          //  EmployeesAndDepartments.employees();
+
+
+
+
+        /*Scanner scanner = new Scanner(System.in);
         boolean continuar = true;
         int opcion;
         long sal_min, sal_max, com_min, com_max;
@@ -83,7 +89,7 @@ public class Main {
                 default:
                     System.out.println("Introduce una opción correcta (1-4)");
             }
-        }
+        }*/
 
     }
 }

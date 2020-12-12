@@ -1,6 +1,6 @@
 package statements;
 import constants.*;
-import db.DBConnect;
+import dbConnector.DBConnect;
 
 import java.sql.*;
 

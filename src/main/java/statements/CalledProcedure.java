@@ -11,8 +11,8 @@ import java.sql.Types;
 
 public class CalledProcedure {
 
-    private static long comision_minimo;
-    private static long comision_maximo;
+    private static long COMISION_MINIMA;
+    private static long COMISION_MAXIMA;
 
     public static void rangoComision() throws SQLException{
         Connection oConn = null;
@@ -25,8 +25,8 @@ public class CalledProcedure {
         } finally {
             try{
                 cs = oConn.prepareCall(Statements.PROCEDURE);
-                cs.setLong(1, getComision_minimo());
-                cs.setLong(2, getComision_maximo());
+                cs.setLong(1, getComisionMinima());
+                cs.setLong(2, getComisionMaxima());
                 cs.registerOutParameter(3, Types.INTEGER);
                 cs.executeUpdate();
                 int cantidadEmpleados = cs.getInt(3);
@@ -51,19 +51,19 @@ public class CalledProcedure {
     }
 
 
-    public static long getComision_minimo() {
-        return comision_minimo;
+    public static long getComisionMinima() {
+        return COMISION_MINIMA;
     }
 
-    public static void setComision_minimo(long comision_minimo) {
-        CalledProcedure.comision_minimo = comision_minimo;
+    public static void setComisionMinima(long comisionMinima) {
+        CalledProcedure.COMISION_MINIMA = comisionMinima;
     }
 
-    public static long getComision_maximo() {
-        return comision_maximo;
+    public static long getComisionMaxima() {
+        return COMISION_MAXIMA;
     }
 
-    public static void setComision_maximo(long comision_maximo) {
-        CalledProcedure.comision_maximo = comision_maximo;
+    public static void setComisionMaxima(long comisionMaxima) {
+        CalledProcedure.COMISION_MAXIMA = comisionMaxima;
     }
 }

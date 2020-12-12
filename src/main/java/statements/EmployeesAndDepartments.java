@@ -3,6 +3,7 @@ package statements;
 import constants.ConstantsDB;
 import constants.Statements;
 import dbConnector.DBConnect;
+import model.Closer;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,6 +11,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class EmployeesAndDepartments {
+
+    private static String DEPARTAMENTO;
 
     public static void employees(){
         Connection oConn = null;
@@ -22,7 +25,7 @@ public class EmployeesAndDepartments {
         } finally {
             try {
                 pstmt = oConn.prepareStatement(Statements.EMPLOYEES_FROM_DEPARTMENT);
-                pstmt.setString(1, "MARKETING");
+                pstmt.setString(1, getDEPARTAMENTO());
                 pstmt.getResultSet();
                 rs=pstmt.executeQuery();
                 while (rs.next()) {
@@ -34,31 +37,22 @@ public class EmployeesAndDepartments {
                                     rs.getString("SALARIO")+ "\t\t"+
                                     rs.getString("COMISION")+ "\t\t"+
                                     rs.getString("NOMBRE"));
-
                 }
-
             } catch (SQLException ex){
                 System.out.println("SQLException: " + ex.getMessage());
                 System.out.println("SQLState: " + ex.getSQLState());
                 System.out.println("VendorError: " + ex.getErrorCode());
             }finally {
-                if (rs != null) {
-                    try {
-                        rs.close();
-                    } catch (SQLException sqlEx) {
-                    } // ignore
-                    rs = null;
-                }
-                if (pstmt != null) {
-                    try {
-                        pstmt.close();
-                    } catch (SQLException sqlEx) {
-                    } // ignore
-                    pstmt = null;
-                }
+                Closer.closingStatementAndResultSet(pstmt, rs);
             }
         }
+    }
 
+    public static String getDEPARTAMENTO() {
+        return DEPARTAMENTO;
+    }
 
+    public static void setDEPARTAMENTO(String DEPARTAMENTO) {
+        EmployeesAndDepartments.DEPARTAMENTO = DEPARTAMENTO;
     }
 }

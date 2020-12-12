@@ -10,6 +10,7 @@ package statements;
 
 import constants.*;
 import dbConnector.*;
+import model.*;
 import java.sql.*;
 
 public class InnerJoin {
@@ -22,9 +23,7 @@ public class InnerJoin {
 
         try {
             oConn=DBConnect.getDBConnection(ConstantsDB.URL, ConstantsDB.USER, ConstantsDB.PASSWORD);
-/*            Class.forName("com.mysql.cj.jdbc.Driver");
-            oConn = DriverManager.getConnection(ConstantsDB.URL, ConstantsDB.USER, ConstantsDB.PASSWORD);
-            System.out.println("Database connection established");*/
+
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException throwables) {
@@ -48,25 +47,11 @@ public class InnerJoin {
 
                 }
             } catch (SQLException ex) {
-                // handle any errors
                 System.out.println("SQLException: " + ex.getMessage());
                 System.out.println("SQLState: " + ex.getSQLState());
                 System.out.println("VendorError: " + ex.getErrorCode());
             } finally {
-                if (rs != null) {
-                    try {
-                        rs.close();
-                    } catch (SQLException sqlEx) {
-                    } // ignore
-                    rs = null;
-                }
-                if (stmt != null) {
-                    try {
-                        stmt.close();
-                    } catch (SQLException sqlEx) {
-                    } // ignore
-                    stmt = null;
-                }
+                Closer.closingStatementAndResultSet(stmt, rs);
             }
         }
 

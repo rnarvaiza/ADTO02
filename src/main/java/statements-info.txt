@@ -1,0 +1,4 @@
+Employees and departments. 
+Buen ejemplo de código por:
+- Usar preparedStatementes por evitar las injections y tener precargado los selects, etc.
+- Usar los cierres en el finally.
